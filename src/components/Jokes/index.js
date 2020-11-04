@@ -4,6 +4,7 @@ import getJoke from '../../helpers/data/jokeData';
 export default class Joke extends Component {
   state = {
     joke: [],
+    isActive: false,
   };
 
   componentDidMount() {
@@ -14,6 +15,20 @@ export default class Joke extends Component {
     });
   }
 
+  showElement = () => {
+    this.setState({
+      isActive: true,
+    });
+    console.warn('show');
+  };
+
+  hideElement = () => {
+    this.setState({
+      isActive: false,
+    });
+    console.warn('hide');
+  };
+
   render() {
     const { joke } = this.state;
 
@@ -23,9 +38,20 @@ export default class Joke extends Component {
           <img src='/REACT_JS.png' className='card-img-top' alt='...' />
         </div>
         <div className='card-body'>
-        <button className='btn btn-dark'>
-                  Get a Joke
+        {this.state.isActive ? <button className='btn btn-dark'>
+                  Get Punchline
+                </button> : <button className='btn btn-dark' onClick={this.showElement}>
+            Get a Joke
+          </button>}
+          {this.state.isActive ? <p>Setup: {joke[2]}</p> : null}
+
+          {/* <button className='btn btn-dark'>
+                  Get Punchline
                 </button>
+          <p>Punchline: {joke[3]}</p>
+          <button className='btn btn-dark'>
+                  Get a New Joke
+                </button> */}
         </div>
       </div>
     );
