@@ -22,13 +22,6 @@ export default class Joke extends Component {
     console.warn('show');
   };
 
-  hideElement = () => {
-    this.setState({
-      isActive: false,
-    });
-    console.warn('hide');
-  };
-
   render() {
     const { joke } = this.state;
 
