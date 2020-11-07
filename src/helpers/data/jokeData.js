@@ -5,8 +5,7 @@ const getJoke = () => new Promise((resolve, reject) => {
   axios
     .get(`${baseUrl}`)
     .then((response) => {
-      const joke = Object.values(response.data);
-      resolve(joke);
+      resolve(response.data);
     })
     .catch((error) => reject(error));
 });
