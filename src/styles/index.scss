@@ -5,3 +5,20 @@
 body {
   background-color: $favColor;
 }
+
+.card {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #4f4f4f;
+}
+
+.btn {
+  background-color: black;
+}
+
+p {
+  color: white;
+  font-size: x-large;
+}
